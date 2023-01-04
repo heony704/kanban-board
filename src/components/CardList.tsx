@@ -39,7 +39,7 @@ export default function CardList({ title, cards }: ListType) {
       </div>
       <div className="flex flex-col pb-2">
         {cards.map(card => (
-          <Card card={card} />
+          <Card key={card.id} card={card} />
         ))}
       </div>
     </div>

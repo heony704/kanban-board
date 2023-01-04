@@ -16,7 +16,7 @@ export default function CardDetail({ card, hideFunction }: CardDetailType) {
   const { title, contents, status, member } = card;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 w-full h-full bg-stone-800/60 overflow-y-auto">
+    <div className="fixed top-0 left-0 right-0 z-50 w-screen h-screen bg-stone-800/60">
       <div className="relative max-w-2xl m-auto mt-20 bg-white rounded-lg shadow">
         <button
           type="button"

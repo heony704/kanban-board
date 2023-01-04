@@ -20,7 +20,15 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "jsx-a11y/label-has-associated-control": [
+      "error",
+      {
+        "required": {
+          "some": ["nesting", "id"]
+        }
+      }
+    ]
   },
   "ignorePatterns": ["tailwind.config.js"]
 }

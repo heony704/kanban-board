@@ -1,3 +1,5 @@
+import KanbanPage from './pages/KanbanPage';
+
 export default function App() {
-  return <div>React App</div>;
+  return <KanbanPage />;
 }

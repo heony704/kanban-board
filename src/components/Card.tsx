@@ -18,7 +18,6 @@ export default function Card({ card }: CardType) {
   const [cardDetailVisible, setCardDetailVisible] = useState(false);
 
   const showCardDetail = () => setCardDetailVisible(true);
-
   const hideCardDetail = () => setCardDetailVisible(false);
 
   return (

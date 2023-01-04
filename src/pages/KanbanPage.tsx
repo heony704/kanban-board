@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import List from '../components/List';
+import CardList from '../components/CardList';
 
 const issues = [
   {
@@ -41,15 +41,15 @@ export default function KanbanPage() {
     <div className="flex flex-col w-screen h-screen overflow-y-scroll text-gray-700 bg-gradient-to-tr from-blue-200 via-indigo-200 to-pink-200">
       <Header />
       <div className="flex flex-grow justify-center px-10 pb-5 space-x-6">
-        <List
+        <CardList
           title="To Do"
           cards={issues.filter(issue => issue.status === 'TO_DO')}
         />
-        <List
+        <CardList
           title="Doing"
           cards={issues.filter(issue => issue.status === 'DOING')}
         />
-        <List
+        <CardList
           title="Done"
           cards={issues.filter(issue => issue.status === 'DONE')}
         />

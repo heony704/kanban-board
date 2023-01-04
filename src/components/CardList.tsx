@@ -13,7 +13,7 @@ interface ListType {
   }[];
 }
 
-export default function List({ title, cards }: ListType) {
+export default function CardList({ title, cards }: ListType) {
   return (
     <div className="flex flex-col flex-shrink-0 w-72">
       <div className="flex items-center flex-shrink-0 h-10 px-2">

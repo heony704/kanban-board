@@ -7,9 +7,10 @@ interface CardDetailType {
     status: string;
     member: string;
   };
+  hideFunction: () => void;
 }
 
-export default function CardDetail({ card }: CardDetailType) {
+export default function CardDetail({ card, hideFunction }: CardDetailType) {
   const { title, contents, status, member } = card;
 
   return (
@@ -18,6 +19,7 @@ export default function CardDetail({ card }: CardDetailType) {
         <button
           type="button"
           className="absolute top-3 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
+          onClick={hideFunction}
         >
           <svg
             aria-hidden="true"

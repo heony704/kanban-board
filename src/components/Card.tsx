@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import useModal from '../hooks/useModal';
 
 import CardDetail from './CardDetail';
 import { DateIcon, PersonIcon } from './Icon';
@@ -17,10 +17,7 @@ interface CardType {
 export default function Card({ card }: CardType) {
   const { title, date, member } = card;
 
-  const [cardDetailVisible, setCardDetailVisible] = useState(false);
-
-  const showCardDetail = () => setCardDetailVisible(true);
-  const hideCardDetail = () => setCardDetailVisible(false);
+  const [cardDetailVisible, showCardDetail, hideCardDetail] = useModal();
 
   return (
     <>

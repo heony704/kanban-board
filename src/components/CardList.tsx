@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import useModal from '../hooks/useModal';
 
 import Card from './Card';
 import NewCard from './NewCard';
@@ -17,10 +17,7 @@ interface ListType {
 }
 
 export default function CardList({ title, cards }: ListType) {
-  const [newCardVisible, setNewCardVisible] = useState(false);
-
-  const showNewCard = () => setNewCardVisible(true);
-  const hideNewCard = () => setNewCardVisible(false);
+  const [newCardVisible, showNewCard, hideNewCard] = useModal();
 
   return (
     <div className="flex flex-col flex-shrink-0 w-72">

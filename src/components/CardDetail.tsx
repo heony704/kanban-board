@@ -1,3 +1,5 @@
+import useObjectState from '../hooks/useObjectState';
+
 import { ExitIcon } from './Icon';
 
 interface CardDetailType {
@@ -13,24 +15,26 @@ interface CardDetailType {
 }
 
 export default function CardDetail({ card, hideFunction }: CardDetailType) {
-  const { title, contents, status, member } = card;
+  const [cardDetail, changeCardDetail] = useObjectState(card);
+  const { title, contents, status, member } = cardDetail;
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 w-screen h-screen bg-stone-800/60">
       <div className="relative max-w-2xl m-auto mt-20 bg-white rounded-lg shadow">
         <button
           type="button"
-          className="absolute top-3 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
           onClick={hideFunction}
+          className="absolute top-3 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
         >
           <ExitIcon />
         </button>
         <div className="px-6 py-6">
-          <form className="space-y-2" action="#">
+          <form className="space-y-2">
             <input
               type="text"
-              className="text-2xl font-medium w-11/12 text-gray-900 rounded-lg p-1 border border-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
               value={title}
+              onChange={e => changeCardDetail('title', e.target.value)}
+              className="text-2xl font-medium w-11/12 text-gray-900 rounded-lg p-1 border border-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
             />
             <div className="pl-2">
               <span className="w-28 inline-block font-light text-gray-900 select-none">
@@ -47,6 +51,7 @@ export default function CardDetail({ card, hideFunction }: CardDetailType) {
               </span>
               <select
                 defaultValue={status}
+                onChange={e => changeCardDetail('status', e.target.value)}
                 className="w-40 font-light text-gray-900 rounded-lg border border-white p-1 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               >
                 <option value="TO_DO">To Do</option>
@@ -60,13 +65,16 @@ export default function CardDetail({ card, hideFunction }: CardDetailType) {
               </span>
               <input
                 type="text"
-                className="w-40 font-light text-gray-900 rounded-lg border border-white py-1 px-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
                 value={member}
+                onChange={e => changeCardDetail('member', e.target.value)}
+                className="w-40 font-light text-gray-900 rounded-lg border border-white py-1 px-2 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               />
             </div>
-            <textarea className="text-gray-900 rounded-lg py-1 px-2 w-full h-72 resize-none border border-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500">
-              {contents}
-            </textarea>
+            <textarea
+              value={contents}
+              onChange={e => changeCardDetail('contents', e.target.value)}
+              className="text-gray-900 rounded-lg py-1 px-2 w-full h-72 resize-none border border-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500"
+            />
             <div className="flex justify-between">
               <button
                 type="submit"

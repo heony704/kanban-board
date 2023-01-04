@@ -22,7 +22,7 @@ export default function CardList({ title, cards }: ListType) {
   return (
     <div className="flex flex-col flex-shrink-0 w-72">
       {newCardVisible && (
-        <NewCard status={cards[0].status} hideFunction={hideNewCard} />
+        <NewCard cardListStatus={cards[0].status} hideFunction={hideNewCard} />
       )}
       <div className="flex items-center flex-shrink-0 h-10 px-2">
         <span className="block text-sm font-semibold">{title}</span>

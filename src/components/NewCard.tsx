@@ -54,12 +54,14 @@ export default function NewCard({ status, hideFunction }: CardDetailType) {
               />
             </div>
             <textarea className="bg-gray-100 text-gray-900 rounded-lg py-1 px-2 w-full h-72 resize-none border border-white focus:border-indigo-500 focus:outline-none focus:ring-indigo-500" />
-            <button
-              type="submit"
-              className="rounded-lg border border-transparent bg-blue-700 py-2 px-4 ml-1 text-sm font-medium text-white shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
-            >
-              Save
-            </button>
+            <div className="flex justify-between">
+              <button
+                type="submit"
+                className="rounded-lg border border-transparent bg-blue-700 py-2 px-4 ml-1 text-sm font-medium text-white shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300"
+              >
+                Create
+              </button>
+            </div>
           </form>
         </div>
       </div>

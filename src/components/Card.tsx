@@ -4,14 +4,7 @@ import CardDetail from './CardDetail';
 import { DateIcon, PersonIcon } from './Icon';
 
 interface CardType {
-  card: {
-    id: number;
-    title: string;
-    date: string;
-    status: string;
-    member: string;
-    contents: string;
-  };
+  card: Issue;
 }
 
 export default function Card({ card }: CardType) {

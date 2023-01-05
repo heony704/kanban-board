@@ -50,7 +50,7 @@ export default function CardDetail({ card, hideFunction }: CardDetailType) {
                 Status
               </span>
               <select
-                defaultValue={status}
+                value={status}
                 onChange={e => changeCardDetail('status', e.target.value)}
                 className="w-40 font-light text-gray-900 rounded-lg border border-white p-1 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               >

@@ -53,7 +53,8 @@ export default function NewCard({
                 Status
               </span>
               <select
-                defaultValue={status}
+                defaultValue={cardListStatus}
+                value={status}
                 onChange={e => changeCardDetail('status', e.target.value)}
                 className="w-40 font-light bg-gray-100 text-gray-900 rounded-lg border border-white p-1 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 text-sm"
               >

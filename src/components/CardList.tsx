@@ -4,19 +4,12 @@ import Card from './Card';
 import NewCard from './NewCard';
 import { AddIcon } from './Icon';
 
-interface ListType {
+interface CardListType {
   title: string;
-  cards: {
-    id: number;
-    title: string;
-    date: string;
-    status: string;
-    member: string;
-    contents: string;
-  }[];
+  cards: Issue[];
 }
 
-export default function CardList({ title, cards }: ListType) {
+export default function CardList({ title, cards }: CardListType) {
   const [newCardVisible, showNewCard, hideNewCard] = useModal();
 
   return (
